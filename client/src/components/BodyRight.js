@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ForecastCard from "./ForecastCard";
-import { useDispatch, useSelector } from "react-redux";
-import { TYPES } from "../redux/actions/apiAction";
+import {  useSelector, useDispatch } from "react-redux";
+import { changeCity, changeForecast, getData } from "../redux/reducers/apiReducer";
+import { onAlert, offAlert } from "../redux/reducers/alertReducer"
 import axios from "axios";
 import { apiURL } from "../utils/apiURL";
 
@@ -10,29 +11,32 @@ const BodyRight = () => {
   const [data, setData] = useState(null);
 
   const dispatch = useDispatch();
-
   useEffect(() => {
     axios
       .get(
         `${apiURL}/weather?name=${api.city}&forecast=${api.forecast}`
       )
       .then((res) => {
+        dispatch(getData(res.data));
+        // dispatch({ type: TYPES.GET_DATA, payload: res.data });
         setData(res.data);
-        dispatch({ type: TYPES.GET_DATA, payload: res.data });
-        dispatch({ type: TYPES.OFFALERT, payload: '' });
+        // dispatch({ type: TYPES.OFFALERT, payload: '' });
+        dispatch(offAlert(''));
 
       })
       .catch((err) => {
-        dispatch({ type: TYPES.ONALERT, payload: err.response.data.message });
+        // dispatch({ type: TYPES.ONALERT, payload: err.response.data.message });
+        dispatch(onAlert(err.response.data.message));
       });
-  }, [api.city, api.forecast, dispatch, setData]);
+  }, [api.city, api.forecast, setData]);
 
   const handleLoadMore = () => {
     if (data.forecastWeather.length < 10) {
-      dispatch({ type: TYPES.CHANGE_FORECAST, payload: api.forecast + 2 });
+      // dispatch({ type: TYPES.CHANGE_FORECAST, payload: api.forecast + 2 });
+      dispatch(changeForecast(api.forecast + 2));
     }else{
-      dispatch({ type: TYPES.CHANGE_FORECAST, payload: 4 });
-
+      // dispatch({ type: TYPES.CHANGE_FORECAST, payload: 4 });
+      dispatch(changeForecast(4));
     }
   };
   return (

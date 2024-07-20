@@ -1,25 +1,28 @@
- import { TYPES } from "../actions/apiAction";
 
- const initialState = {
+// React Toolkit
+import { createSlice } from "@reduxjs/toolkit";
+
+
+const alertSlice = createSlice({
+    name: 'alert',
+    initialState:{
         alert: false,
         message: '',
-}
-
-const alertReducer = (state = initialState, action) => {
-    switch(action.type){
-        case TYPES.ONALERT:
-            return {
-                alert: true,
-                message: action.payload
-            }
-        case TYPES.OFFALERT:
-            return {
-                alert: false,
-                message: ''
-            }
-        default:
-            return state
+    },
+    reducers: {
+        onAlert: (state, action) => {
+            state.alert = true;
+            state.message = action.payload;
+        },
+        offAlert: (state) => {
+            state.alert = false;
+            state.message = '';
+        }
     }
-}
+})
 
-export default alertReducer;
+// export default alertReducer;
+
+export const {onAlert, offAlert} = alertSlice.actions;
+
+export default alertSlice.reducer;

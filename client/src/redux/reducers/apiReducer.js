@@ -1,33 +1,27 @@
-import { TYPES } from "../actions/apiAction";
 
-//Get current user
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    data: [],
-    city: 'ho chi minh',
-    forecast: 4
-}
 
-const apiReducer = (state = initialState, action) => {
-    switch(action.type){
-        case TYPES.GET_DATA:
-            return {
-                ...state,
-                data: action.payload
-            }
-        case TYPES.CHANGE_CITY:
-            return {
-                ...state,
-                city: action.payload
-            }
-        case TYPES.CHANGE_FORECAST:
-            return {
-                ...state,
-                forecast: action.payload
-            }
-        default:
-            return state
+const apiSlice = createSlice({
+    name: ' api',
+    initialState:{
+        data: [],
+        city: 'ho chi minh',
+        forecast: 4
+    },
+    reducers: {
+        getData: (state, action) => {
+            state.data = action.payload;
+        },
+        changeCity: (state, action) => {
+            state.city = action.payload;
+        },
+        changeForecast: (state, action) => {
+            state.forecast = action.payload;
+        }
     }
-}
+})
 
-export default apiReducer;
+export const {getData, changeCity, changeForecast} = apiSlice.actions;
+
+export default apiSlice.reducer;

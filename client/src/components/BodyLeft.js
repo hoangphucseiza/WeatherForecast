@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { TYPES } from "../redux/actions/apiAction";
+import {getData, changeCity, changeForecast} from  "../redux/reducers/apiReducer";
 import email from "../images/email.png";
 import axios from "axios";
 import HistoryModal from "./HistoryModal";
@@ -43,8 +43,10 @@ const BodyLeft = () => {
 
   // Handle Search
   const handleSearch = () => {
-    dispatch({ type: TYPES.CHANGE_CITY, payload: city });
-    dispatch({ type: TYPES.CHANGE_FORECAST, payload: 4 });
+    // dispatch({ type: TYPES.CHANGE_CITY, payload: city });
+     dispatch(changeCity(city));
+    // dispatch({ type: TYPES.CHANGE_FORECAST, payload: 4 });
+    dispatch(changeForecast(4));
   };
 
   return (

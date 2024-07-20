@@ -1,18 +1,28 @@
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
+// import {createStore} from 'redux';
+// import {Provider} from 'react-redux';
+// import rootReducer from './reducers/index';
+// import {composeWithDevTools} from 'redux-devtools-extension';
+
+// const  composeEnhancer = composeWithDevTools();
+// const store = createStore(rootReducer, composeEnhancer);
+
+
+// const DataProvider = ({children}) => {
+//     return (
+//         <Provider store={store}>
+//             {children}
+//         </Provider>
+//     )
+// }
+
+// export default DataProvider;
+
+import {configureStore} from '@reduxjs/toolkit';
+
 import rootReducer from './reducers/index';
-import {composeWithDevTools} from 'redux-devtools-extension';
 
-const  composeEnhancer = composeWithDevTools();
-const store = createStore(rootReducer, composeEnhancer);
+const store = configureStore({
+    reducer: rootReducer
+});
 
-
-const DataProvider = ({children}) => {
-    return (
-        <Provider store={store}>
-            {children}
-        </Provider>
-    )
-}
-
-export default DataProvider;
+export default store;
