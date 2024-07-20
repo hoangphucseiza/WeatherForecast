@@ -15,7 +15,7 @@ const sendEmailService =  async (user) => {
         },
       });
 
-      const IP = 'http://localhost:3000'; // Thay thế khi deploy
+      const IP = 'https://weather-forecast-frontend-smoky.vercel.app'; // Thay thế khi deploy
       const info = await transporter.sendMail({
         from: '"Weather Forecast" <forecastweather230@gmail.com>', 
         to: user.email, 
