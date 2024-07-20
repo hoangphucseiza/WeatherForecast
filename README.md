@@ -57,7 +57,7 @@ My name is Nguyen Hoang Phuc, a 4th-year student at the University of Informatio
    npm install
 3. **Open the file src/utils/apiURL.js and update the apiURL variable as follows:**
    ```bash
-   export const apiURL = 'https://localhost:5000';
+   export const apiURL = 'http://localhost:5000';
 
 4. **Start the client frontend server:**
    ```bash
@@ -70,7 +70,7 @@ My name is Nguyen Hoang Phuc, a 4th-year student at the University of Informatio
    
 2. **Open the file services/EmailService.js and update the IP variable as follows:**
    ```bash
-   const IP = 'https://localhost:3000';
+   const IP = 'http://localhost:3000';
 
 3. **Start the client backend server:**
    ```bash
