@@ -2,9 +2,11 @@
 
 Dear GOLDEN OWL,
 
-My name is Nguyen Hoang Phuc, a 4th-year student at the University of Information Technology - VNUHCM UIT. I am pleased to present my result for the web developer intern assignment. I have built a weather forecast website with a responsive design (tablet and mobile). [Visit my app](https://weather-forecast-frontend-smoky.vercel.app/)
+My name is Nguyen Hoang Phuc, a 4th-year student at the University of Information Technology - VNUHCM UIT. I am pleased to present my result for the web developer intern assignment. I have built a weather forecast website with a responsive design (tablet and mobile). 
 * The website uses services from the API provider https://www.weatherapi.com (for weather forecasts) and from  https://openweathermap.org (for obtaining the current location).
 * Use the deployment providers https://vercel.com for the client and https://dashboard.render.com for the server.
+* Regarding deploying the server in render, the server will be inactive after 15 minutes in the free version. Therefore, when accessing the website and not seeing the data displayed, press the Load More button or enter the location and click Search. Then, wait about 10 seconds for the server to come back online
+[Visit my app](https://weather-forecast-frontend-smoky.vercel.app/)
 
 ![Screenshot](./demo/main.png)
 
