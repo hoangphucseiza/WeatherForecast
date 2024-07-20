@@ -29,7 +29,7 @@ const BodyRight = () => {
         // dispatch({ type: TYPES.ONALERT, payload: err.response.data.message });
         dispatch(onAlert(err.response.data.message));
       });
-  }, [api.city, api.forecast, dispatch, apiURL]);
+  }, [api.city, api.forecast]);
 
   const handleLoadMore = () => {
     if (data.forecastWeather.length < 10) {
