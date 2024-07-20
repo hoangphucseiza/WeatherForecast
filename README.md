@@ -4,8 +4,8 @@ Dear GOLDEN OWL,
 
 My name is Nguyen Hoang Phuc, a 4th-year student at the University of Information Technology - VNUHCM UIT. I am pleased to present my result for the web developer intern assignment. I have built a weather forecast website with a responsive design (tablet and mobile). [Visit my app](https://weather-forecast-frontend-smoky.vercel.app/)
 * The website uses services from the API provider https://www.weatherapi.com (for weather forecasts) and from  https://openweathermap.org (for obtaining the current location).
-* Use the deployment providers https://vercel.com for the client and https://dashboard.render.com for the server.
-* Regarding deploying the server in render, the server will be inactive after 15 minutes in the free version. Therefore, when accessing the website and not seeing the data displayed, press the Load More button or enter the location and click Search. Then, wait about 10 seconds for the server to come back online
+* Use the deployment providers https://vercel.com for the client and https://render.com for the server.
+
 
 
 ![Screenshot](./demo/main.png)
@@ -21,6 +21,11 @@ My name is Nguyen Hoang Phuc, a 4th-year student at the University of Informatio
 - **Use Current Location**: Get current location information and allow searching for the weather forecast 
 - **Search History**: See the positions searched today
 - **Daily Weather Alerts**: Subscribe and unsubscribe to receive daily weather update emails (verify with token)
+
+# Some notes
+- **Render.com**: Regarding deploying the server in render, the server will be inactive after 15 minutes in the free version. Therefore, when accessing the website and not seeing the data displayed, press the Load More button or enter the location and click Search. Then, wait about 10 seconds for the server to come back online
+
+- **Nodemailer**: When using the email subscription function, check your spam folder if you don't see the email in your inbox. If the email is in the spam folder and you cannot click the "Verify Your Mail" link, please try unsubscribing and subscribing again.
 
 # Demo of Some Interfaces
 - Search Feature
