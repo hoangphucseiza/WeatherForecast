@@ -30,10 +30,16 @@ app.get("/weather", async (req, res) => {
     currentWeather.tempc = data.current.temp_c;
     currentWeather.wind_mph = data.current.wind_mph;
     currentWeather.humidity = data.current.humidity;
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    const currentDate = `${year}-${month}-${day}`;
     // History API
     const history = new HistorySchema({
       country: data.location.name,
-      date: data.location.localtime.split(" ")[0],
+      date: currentDate,
       text: data.current.condition.text,
       icon: data.current.condition.icon,
       tempc: data.current.temp_c,
