@@ -2,9 +2,11 @@
 
 Dear GOLDEN OWL,
 
-My name is Nguyen Hoang Phuc, a 4th-year student at the University of Information Technology - VNUHCM UIT. I am pleased to present my result for the web developer intern assignment. I have built a weather forecast website with a responsive design (tablet and mobile). 
+My name is Nguyen Hoang Phuc, a 4th-year student at the University of Information Technology - VNUHCM UIT. I am pleased to present my result for the web developer intern assignment. I have built a weather forecast website with a responsive design (tablet and mobile). [Visit my app](https://weather-forecast-frontend-smoky.vercel.app/)
 * The website uses services from the API provider https://www.weatherapi.com (for weather forecasts) and from  https://openweathermap.org (for obtaining the current location).
 * Use the deployment providers https://vercel.com for the client and https://dashboard.render.com for the server.
+
+![Screenshot](./demo/main.png)
 
 ## Technologies Used
 
@@ -19,3 +21,57 @@ My name is Nguyen Hoang Phuc, a 4th-year student at the University of Informatio
 - **Daily Weather Alerts**: Subscribe and unsubscribe to receive daily weather update emails (verify with token)
 
 # Demo of Some Interfaces
+- Search Feature
+![Screenshot](./demo/search.png)
+
+- Use Current Location Feature
+![Screenshot](./demo/useLocation.png)
+
+
+- Search History Feature
+![Screenshot](./demo/history.png)
+
+
+- Subscribe Feature
+![Screenshot](./demo/subscibe.png)
+![Screenshot](./demo/verifymail.png)
+![Screenshot](./demo/verifysuccess.png)
+
+- Unsubscribe Feature
+![Screenshot](./demo/unsubsribe.png)
+
+# Installation Guide
+## Prerequisites
+- Node.js
+- npm or yarn
+- MongoDB (local or cloud instance)
+
+### Frontend Setup
+1. **Clone the repository and navigate to the client directory:**
+   ```bash
+   git clone https://github.com/hoangphucseiza/WeatherForecast
+   cd /WeatherForecast/client
+   
+2. **Install dependencies:**
+   ```bash
+   npm install
+3. **Open the file src/utils/apiURL.js and update the apiURL variable as follows:**
+   ```bash
+   export const apiURL = 'https://localhost:5000';
+
+4. **Start the client frontend server:**
+   ```bash
+   npm start
+### Backend Setup
+1. **Navigate to the backend directory and Install dependencies:**
+   ```bash
+   cd /WeatherForecast/client
+   npm install
+   
+2. **Open the file services/EmailService.js and update the IP variable as follows:**
+   ```bash
+   const IP = 'https://localhost:3000';
+
+3. **Start the client backend server:**
+   ```bash
+   npm start
