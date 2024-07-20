@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ForecastCard from "./ForecastCard";
-import {  useSelector, useDispatch } from "react-redux";
-import { changeCity, changeForecast, getData } from "../redux/reducers/apiReducer";
-import { onAlert, offAlert } from "../redux/reducers/alertReducer"
+import { useSelector, useDispatch } from "react-redux";
+import {
+  changeCity,
+  changeForecast,
+  getData,
+} from "../redux/reducers/apiReducer";
+import { onAlert, offAlert } from "../redux/reducers/alertReducer";
 import axios from "axios";
 import { apiURL } from "../utils/apiURL";
 
@@ -13,16 +17,13 @@ const BodyRight = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get(
-        `${apiURL}/weather?name=${api.city}&forecast=${api.forecast}`
-      )
+      .get(`${apiURL}/weather?name=${api.city}&forecast=${api.forecast}`)
       .then((res) => {
         dispatch(getData(res.data));
         // dispatch({ type: TYPES.GET_DATA, payload: res.data });
         setData(res.data);
         // dispatch({ type: TYPES.OFFALERT, payload: '' });
-        dispatch(offAlert(''));
-
+        dispatch(offAlert(""));
       })
       .catch((err) => {
         // dispatch({ type: TYPES.ONALERT, payload: err.response.data.message });
@@ -34,7 +35,7 @@ const BodyRight = () => {
     if (data.forecastWeather.length < 10) {
       // dispatch({ type: TYPES.CHANGE_FORECAST, payload: api.forecast + 2 });
       dispatch(changeForecast(api.forecast + 2));
-    }else{
+    } else {
       // dispatch({ type: TYPES.CHANGE_FORECAST, payload: 4 });
       dispatch(changeForecast(4));
     }

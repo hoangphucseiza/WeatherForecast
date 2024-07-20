@@ -331,6 +331,6 @@ code {
  }
  .history_modal_container{
   max-width: 90%;
-  transform: translateY(50%);
+  /* transform: translateY(50%); */
  }
 }
