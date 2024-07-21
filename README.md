@@ -2,19 +2,22 @@
 
 Dear GOLDEN OWL,
 
-My name is Nguyen Hoang Phuc, a 4th-year student at the University of Information Technology - VNUHCM UIT. I am pleased to present my result for the web developer intern assignment. I have built a weather forecast website with a responsive design (tablet and mobile). [Visit my app](https://weather-forecast-frontend-smoky.vercel.app/)
-* The website uses services from the API provider https://www.weatherapi.com (for weather forecasts) and from  https://openweathermap.org (for obtaining the current location).
-* Use the deployment providers https://vercel.com for the client and https://render.com for the server.
-
-
+My name is Nguyen Hoang Phuc, a 4th-year student at the University of Information Technology - VNUHCM UIT. I am pleased to present my result for the web developer intern assignment. I have built a weather forecast website with a responsive design (tablet and mobile). 
+* [Visit my app](https://weather-forecast-frontend-smoky.vercel.app/)
+* [Demo link](https://www.youtube.com/watch?v=707tvMbkbAY)
 
 ![Screenshot](./demo/main.png)
+
+# Providers
+* API providers https://www.weatherapi.com (for weather forecasts) and from  https://openweathermap.org (for obtaining the current location).
+* Deployment providers https://vercel.com for the client and https://render.com for the server.
+
 
 ## Technologies Used
 
 - **Frontend**: React, Redux Toolkit, Bootstrap
 - **Backend**: NodeJS, ExpressJS
-- **Database**: MongoDB
+- **Database**: MongoDB (stores subscribers and search history)
 
 # Features of the Website
 - **Search**: View weather forecasts at the search location
