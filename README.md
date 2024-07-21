@@ -72,13 +72,13 @@ My name is Nguyen Hoang Phuc, a 4th-year student at the University of Informatio
 ### Backend Setup
 1. **Navigate to the backend directory and Install dependencies:**
    ```bash
-   cd /WeatherForecast/client
+   cd /WeatherForecast/server
    npm install
    
 2. **Open the file services/EmailService.js and update the IP variable as follows:**
    ```bash
    const IP = 'http://localhost:3000';
 
-3. **Start the client backend server:**
+3. **Start the backend server:**
    ```bash
-   npm start
+   npm run dev
